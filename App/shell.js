@@ -13,10 +13,7 @@
     function viewAttached()
     {
         console.log("viewAttached");
-        //var app = new kendo.mobile.Application($(document.body), {
-        var app = new kendo.mobile.Application($("#content"), {
-            skin: "flat"
-        });
+
     }
 
     function activate()
