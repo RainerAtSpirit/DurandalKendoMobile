@@ -8,7 +8,16 @@
     };
 
     ctor.prototype.viewAttached = function() {
-        console.log("Home viewAttached");
+        var $kendoHost = $('#kendoHost');
+        // Workaround for height = 0.
+        // Additional code required to calculate on windows.resize
+        $kendoHost.height($(window).height());
+        this.app = new kendo.mobile.Application($kendoHost, {
+            skin: "flat"
+        });
+
+        console.log("Home viewAttached", this.app, $kendoHost.height());
+
     };
 
     return ctor;
